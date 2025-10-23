@@ -1,105 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design System for Uialoda - Real Estate Investment Center */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Brand Colors - Elegant Deep Blue Accent */
+    --background: 0 0% 99%;
+    --foreground: 222 20% 15%;
+    
+    --primary: 231 48% 30%; /* #283593 - Deep Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 231 48% 92%;
+    
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 20% 15%;
+    
+    --accent: 231 48% 30%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --card-foreground: 222 20% 15%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 231 48% 30%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Custom Design Tokens */
+    --shadow-elegant: 0 4px 20px rgba(40, 53, 147, 0.08);
+    --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 8px 24px rgba(40, 53, 147, 0.12);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
+  
   * {
     @apply border-border;
   }
-
+  
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+@layer components {
+  /* Animated Link Underline */
+  .link-underline {
+    @apply relative inline-block;
+    transition: var(--transition-smooth);
+  }
+  
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-medium rounded-lg;
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary/90;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-transparent text-primary border-2 border-primary font-medium rounded-lg;
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  /* Card Styles */
+  .card-hover {
+    @apply bg-card rounded-xl border border-border p-6;
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+    @apply border-primary/20;
+  }
+  
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+  
+  /* Decorative Line */
+  .decorative-line {
+    @apply relative;
+  }
+  
+  .decorative-line::before {
+    content: '';
+    @apply absolute left-0 top-0 w-12 h-1 bg-primary rounded-full;
+  }
+  
+  /* Form Input */
+  .form-input {
+    @apply w-full px-4 py-3 bg-background border border-input rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary;
+    transition: var(--transition-smooth);
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Prose styling for content */
+  .prose {
+    @apply text-foreground;
+  }
+  
+  .prose h2 {
+    @apply text-2xl font-serif mt-8 mb-4 text-foreground;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-serif mt-6 mb-3 text-foreground;
+  }
+  
+  .prose h4 {
+    @apply text-lg font-serif mt-4 mb-2 text-foreground;
+  }
+  
+  .prose p {
+    @apply mb-4 text-muted-foreground leading-relaxed;
+  }
+  
+  .prose ul, .prose ol {
+    @apply mb-4 ml-6 space-y-2;
+  }
+  
+  .prose li {
+    @apply text-muted-foreground leading-relaxed;
+  }
+  
+  .prose strong {
+    @apply text-foreground font-semibold;
+  }
+  
+  .prose a {
+    @apply text-primary hover:underline;
   }
 }
